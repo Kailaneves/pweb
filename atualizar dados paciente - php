@@ -1,0 +1,24 @@
+<?php
+$nome = $_GET['nome'];
+$cpf = $_GET['cpf'];
+$peso = $_GET['peso'];
+$data_nascimento = $_GET['data_nascimento'];
+$id = $_GET['id'];
+
+//Conectar no banco de dados
+$bd = mysqli_connect("localhost", "root", "alunoifba", "HGVC");
+
+$sql = "UPDATE Paciente SET nome = '$nome', cpf = '$cpf', peso = $peso, data_nascimento = '$data_nascimento' WHERE id = $id";
+
+//Executa o comando no banco
+mysqli_query($bd, $sql);
+
+
+//Desconecta do BD
+mysqli_close($bd);
+
+
+print "Paciente atualizado";
+print $sql;
+
+?>
