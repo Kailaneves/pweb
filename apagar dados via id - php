@@ -1,0 +1,17 @@
+<?php
+$id = $_POST['id'];
+$sql = "DELETE FROM Paciente WHERE id like '$id' ";
+
+
+//Conectar no banco de dados
+$bd = mysqli_connect("localhost", "root", "alunoifba", "HGVC");
+
+//Executa o comando no banco
+mysqli_query($bd, $sql);
+
+//Desconecta do BD
+mysqli_close($bd);
+
+print "Id apagado com sucesso!";
+
+?>
